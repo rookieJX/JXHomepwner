@@ -21,7 +21,11 @@
     
     JXItemsViewController * itemsViewController = [[JXItemsViewController alloc] init];
     
-    self.window.rootViewController = itemsViewController;
+    // 创建 UINavigationController 对象
+    // 该对象的栈只包含 itemsViewController
+    UINavigationController * navController = [[UINavigationController alloc] initWithRootViewController:itemsViewController];
+    
+    self.window.rootViewController = navController;
     
     [self.window makeKeyAndVisible];
     

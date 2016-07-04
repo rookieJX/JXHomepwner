@@ -7,9 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		261CE4BE1D2A4EC900719B85 /* JXDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 261CE4BC1D2A4EC900719B85 /* JXDetailViewController.m */; };
+		261CE4BF1D2A4EC900719B85 /* JXDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 261CE4BD1D2A4EC900719B85 /* JXDetailViewController.xib */; };
 		26B31DF71D28E13800721CE4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 26B31DF61D28E13800721CE4 /* main.m */; };
 		26B31DFA1D28E13800721CE4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 26B31DF91D28E13800721CE4 /* AppDelegate.m */; };
-		26B31DFD1D28E13800721CE4 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26B31DFC1D28E13800721CE4 /* ViewController.m */; };
 		26B31E001D28E13800721CE4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26B31DFE1D28E13800721CE4 /* Main.storyboard */; };
 		26B31E021D28E13800721CE4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 26B31E011D28E13800721CE4 /* Assets.xcassets */; };
 		26B31E051D28E13800721CE4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26B31E031D28E13800721CE4 /* LaunchScreen.storyboard */; };
@@ -38,12 +39,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		261CE4BB1D2A4EC900719B85 /* JXDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXDetailViewController.h; sourceTree = "<group>"; };
+		261CE4BC1D2A4EC900719B85 /* JXDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXDetailViewController.m; sourceTree = "<group>"; };
+		261CE4BD1D2A4EC900719B85 /* JXDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JXDetailViewController.xib; sourceTree = "<group>"; };
 		26B31DF21D28E13800721CE4 /* JXHomepwner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JXHomepwner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		26B31DF61D28E13800721CE4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		26B31DF81D28E13800721CE4 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		26B31DF91D28E13800721CE4 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		26B31DFB1D28E13800721CE4 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		26B31DFC1D28E13800721CE4 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		26B31DFF1D28E13800721CE4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		26B31E011D28E13800721CE4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		26B31E041D28E13800721CE4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -112,10 +114,11 @@
 			children = (
 				26B31DF81D28E13800721CE4 /* AppDelegate.h */,
 				26B31DF91D28E13800721CE4 /* AppDelegate.m */,
-				26B31DFB1D28E13800721CE4 /* ViewController.h */,
-				26B31DFC1D28E13800721CE4 /* ViewController.m */,
 				26B31E281D28E1C400721CE4 /* JXItemsViewController.h */,
 				26B31E291D28E1C400721CE4 /* JXItemsViewController.m */,
+				261CE4BB1D2A4EC900719B85 /* JXDetailViewController.h */,
+				261CE4BC1D2A4EC900719B85 /* JXDetailViewController.m */,
+				261CE4BD1D2A4EC900719B85 /* JXDetailViewController.xib */,
 				26B31E2E1D28E3FF00721CE4 /* JXItemStore.h */,
 				26B31E2F1D28E3FF00721CE4 /* JXItemStore.m */,
 				26B31E2B1D28E3D400721CE4 /* JXItem.h */,
@@ -264,6 +267,7 @@
 				26B31E051D28E13800721CE4 /* LaunchScreen.storyboard in Resources */,
 				26B31E021D28E13800721CE4 /* Assets.xcassets in Resources */,
 				26B31E001D28E13800721CE4 /* Main.storyboard in Resources */,
+				261CE4BF1D2A4EC900719B85 /* JXDetailViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -289,9 +293,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				26B31E301D28E3FF00721CE4 /* JXItemStore.m in Sources */,
-				26B31DFD1D28E13800721CE4 /* ViewController.m in Sources */,
 				26B31E2A1D28E1C400721CE4 /* JXItemsViewController.m in Sources */,
 				26B31DFA1D28E13800721CE4 /* AppDelegate.m in Sources */,
+				261CE4BE1D2A4EC900719B85 /* JXDetailViewController.m in Sources */,
 				26B31DF71D28E13800721CE4 /* main.m in Sources */,
 				26B31E2D1D28E3D400721CE4 /* JXItem.m in Sources */,
 			);

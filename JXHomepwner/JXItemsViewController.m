@@ -9,6 +9,7 @@
 #import "JXItemsViewController.h"
 #import "JXItem.h"
 #import "JXItemStore.h"
+#import "JXDetailViewController.h"
 
 @interface JXItemsViewController ()
 
@@ -23,6 +24,12 @@
 
 @implementation JXItemsViewController
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    [self.tableView reloadData];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -33,9 +40,27 @@
     // 设置头部视图
     [self headerView];
 }
+
 - (instancetype)init {
     // 调用父类的指定初始化方法
     self = [super initWithStyle:UITableViewStylePlain];
+    if (self) {
+        UINavigationItem * navItem = self.navigationItem;
+        navItem.title = @"Homepwner";
+        
+        // 创建新的 UIBarButtonItem 对象
+        // 将其目的对象设置为当前对象，将其动作方法设置为 addClick 方法
+        UIBarButtonItem * bbi = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd
+                                                                              target:self
+                                                                              action:@selector(addClick:)];
+        
+        // 为 UINavigationItem 对象的 rightBarButtonItem 属性赋值
+        // 指向新的 UIBarButtonItem 对象
+        navItem.rightBarButtonItem = bbi;
+        
+        UIBarButtonItem * bbiLeft = [[UIBarButtonItem alloc] initWithTitle:@"Edit" style:UIBarButtonItemStyleDone target:self action:@selector(editClick:)];
+        navItem.leftBarButtonItem = bbiLeft;
+    }
     return self;
 }
 
@@ -119,12 +144,34 @@ titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     return @"Rmove";
 }
+
+/**
+ *  选中表格
+ *
+ *  @param tableView 对象
+ *  @param indexPath 选中的行数
+ */
+- (void)tableView:(UITableView *)tableView
+didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    // 创建选中对象
+    JXDetailViewController * detailViewController = [[JXDetailViewController alloc] init];
+    
+    NSArray * items = [[JXItemStore sharedStore] allItem];
+    JXItem * item = items[indexPath.row];
+    
+    // 将选中的 JXItem 对象赋值给 JXDetailViewController 对象
+    detailViewController.item = item;
+    
+    // 将新创建的 detailViewController 对象压入到 UINavigationController 对象的栈中
+    [self.navigationController pushViewController:detailViewController animated:YES];
+}
 #pragma mark - 懒加载
 - (UIView *)headerView{
     if (_headerView == nil) {
         UIView * headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 50)];
         // 设置头部视图
-        self.tableView.tableHeaderView = headerView;
+//        self.tableView.tableHeaderView = headerView;
         headerView.backgroundColor = [UIColor cyanColor];
         [headerView addSubview:self.editButton];
         [headerView addSubview:self.addButton];
@@ -159,18 +206,18 @@ titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath {
     return _addButton;
 }
 #pragma mark - 点击事件
-- (void)editClick:(UIButton *)sender {
+- (void)editClick:(UIBarButtonItem *)sender {
     if (self.isEditing) { // 如果是编辑状态，取消编辑
         
-        // 修改文字
-        [sender setTitle:@"Edit" forState:UIControlStateNormal];
+        // 更改文字
+        sender.title = @"Edit";
         
         // 取消编辑
         [self setEditing:NO animated:YES];
     } else {
         
-        // 修改文字
-        [sender setTitle:@"Done" forState:UIControlStateNormal];
+        // 更改文字
+        sender.title = @"Done";
         
         // 开始编辑
         [self setEditing:YES animated:YES];
