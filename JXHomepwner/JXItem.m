@@ -67,6 +67,11 @@
         
         // 设置_createDate为当前时间
         _createDate = [NSDate date];
+        
+        // 创建一个 NSUUID 对象
+        NSUUID * uuid = [[NSUUID alloc] init];
+        NSString * key = [uuid UUIDString];
+        _itemKey = key;
     }
     
     // 返回初始化后的对象的新地址

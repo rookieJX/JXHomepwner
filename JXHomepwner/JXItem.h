@@ -17,7 +17,8 @@
 @property (nonatomic,strong) NSString * serialnumber;
 /** 价值 */
 @property (nonatomic,assign) NSInteger valueInDollars;
-
+/** JXImageStore中的键 */
+@property (nonatomic,strong) NSString * itemKey;
 
 + (instancetype)randomItem;
 

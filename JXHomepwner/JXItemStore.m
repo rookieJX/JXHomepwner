@@ -16,6 +16,7 @@
 
 #import "JXItemStore.h"
 #import "JXItem.h"
+#import "JXImageStore.h"
 
 @interface JXItemStore ()
 
@@ -59,6 +60,9 @@
  */
 - (void)removeItem:(JXItem *)item {
     [self.privateItems removeObjectIdenticalTo:item];
+    
+    // 当用户删除某个 JXItem 的时候 JXImageStore 中的对应的图片也要删除
+    [[JXImageStore shareStore] deleteImageForKey:item.itemKey];
 }
 
 - (void)moveItemAtIndex:(NSInteger)fromIndex toIndex:(NSInteger)toIndex {
